@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CALCULADORA DE PERIMETRO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-select
+        class="always-flip"
+        toggleIcon="caret-down-sharp"
+        interface="popover"
+        label="Figura Geometrica"
+        placeholder="Escoja una figura geometrica"
+        (ionChange)="selecionFigura($event)"
+      >
+        <ion-select-option value="Circulo">Circulo</ion-select-option>
+        <ion-select-option value="Triangulo">Triangulo</ion-select-option>
+      </ion-select>
+    </ion-item>
+   </ion-list>
+   <app-circulo *ngIf="esTipoFiguraCirculo()"></app-circulo>
+   <app-triangulo *ngIf="esTipoFiguraTriangulo()"></app-triangulo>
+</ion-content> 
